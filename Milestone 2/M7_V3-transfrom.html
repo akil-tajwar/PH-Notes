@@ -1,0 +1,45 @@
+<!-- scale = zoom in and zoom out
+    translate = move element
+    rotate = rotate -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cover{
+            background-color: yellow;
+            height: 200px;
+            width: 200px;
+            border: 2px solid rebeccapurple;
+            margin-bottom: 100px;
+        }
+        .box{
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            transition: transform 3s;
+        }
+        .box:hover{
+            transform: scale(0.5) rotate(-30deg) translate(50px, 70px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <div class="box">box 1</div>
+    </div>
+    <div class="cover">
+        <div class="box">box 2</div>
+    </div>
+    <div class="cover">
+        <div class="box">box 3</div>
+    </div>
+</body>
+</html>

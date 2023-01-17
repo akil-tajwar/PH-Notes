@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes sliding {
+            0% {
+                left: 1800px;
+                bottom: 110px;
+            }
+
+            50% {
+                left: 500px;
+                bottom: 0px;
+            }
+
+            100% {
+                left: 1800px;
+                bottom: 110px;
+            }
+        }
+
+        @keyframes sliding2 {
+            0% {
+                transform: rotate(0deg);
+                transform-origin: top right;
+            }
+
+            50% {
+                transform: rotate(-60deg);
+                transform-origin: top right;
+            }
+
+            100% {
+                transform: rotate(0deg);
+                transform-origin: top right;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .field {
+            height: 745px;
+            width: 98%;
+            margin: auto;
+            margin-top: 15px;
+            border: 5px green solid;
+        }
+
+        .bat {
+            position: relative;
+            top: 270px;
+            left: 70px;
+            /* transition: transform 0.2s ease-in 1s; */
+            animation: sliding2 1s ease-in-out 1 alternate 0.5s;
+        }
+
+        /* .field:hover .bat{
+            transform: rotate(-60deg);
+            transform-origin: top right;
+        } */
+        .ball {
+            height: 30px;
+            width: 30px;
+            background-color: red;
+            border-radius: 25px;
+            position: relative;
+            left: 1800px;
+            bottom: 130px;
+            transition: transform 0.5s ease-out 2s;
+            animation: sliding 2s ease-out 1 alternate;
+        }
+
+        .field:hover .ball {
+            transform: translate(1000px, -300px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="field">
+        <img class="bat" src="./media/bat.png" width="350px" alt="">
+        <div class="ball"></div>
+    </div>
+</body>
+
+</html>
