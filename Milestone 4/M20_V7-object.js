@@ -7,6 +7,13 @@ var shop = {
 console.log(shop);
 
 
+//with this method we can see properties and values of an object separately
+var properties = Object.keys(shop);
+var propertyValues = Object.values(shop);
+console.log(properties);
+console.log(propertyValues);
+
+
 //first method to change a value of an object
 shop.pen = 6;
 console.log(shop, 'pen value has changed');
