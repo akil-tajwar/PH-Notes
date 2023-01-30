@@ -11,3 +11,12 @@ function add2(num3, num4){
 }
 var total = add2(5, 9);
 console.log(total);
+
+
+
+var i = 10;
+var j = 3;
+sub = i - j;
+console.log(sub);
+
+add1(6, 9);
