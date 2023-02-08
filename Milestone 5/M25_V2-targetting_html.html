@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>fruits</h1>
+        <ul>
+            <li class="select">mango</li>
+            <li>apple</li>
+            <li>banana</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>dishes</h1>
+        <ul>
+            <li id="modify">burger</li>
+            <li>soup</li>
+            <li class="select">shorma</li>
+        </ul>
+    </section>
+    <script>
+        let headCollection = document.getElementsByTagName('h1');
+        for(const head of headCollection){
+            console.log(head.innerText);
+            head.innerText = "we changed";
+        }
+        let selectCollection = document.getElementsByClassName('select');
+        for(const everySelect of selectCollection){
+            console.log(everySelect.innerText);
+            everySelect.innerText = "we changed too";
+        }
+        let idChange = document.getElementById('modify');
+        idChange.innerText = "only i changed"
+    </script>
+</body>
+</html>
