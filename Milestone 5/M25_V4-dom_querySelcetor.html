@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <ul>
+            <h1 id="top">AI Team</h1>
+            <li class="me">Akil</li>
+            <li>Jonaid</li>
+            <li>Sakib</li>
+            <li>Boro Vai</li>
+        </ul>
+    </section>
+
+    <section>
+        <ul>
+            <h1>OS Team</h1>
+            <li class="me">Akil</li>
+            <li>Oishe</li>
+            <li>Rasel</li>
+            <li>Kakon</li>
+        </ul>
+    </section>
+
+    <section>
+        <ul>
+            <h1>SD2 Team</h1>
+            <li class="me">Akil</li>
+            <li>Rasel</li>
+            <li>Oishe</li>
+        </ul>
+    </section>
+
+    <script>
+        document.querySelector('#top').innerText = 'High Expectation';
+
+        const allMe = document.querySelectorAll('.me');
+        for(const onlyMe of allMe){
+            console.log(onlyMe.innerText);
+            onlyMe.innerText = 'yap!! This is me';
+        }
+    </script>
+</body>
+</html>
