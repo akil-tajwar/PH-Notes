@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="container1"></section>
+    <section id="container2"></section>
+    <script>
+        //first method
+        const selectContainer1 = document.getElementById('container1');
+        const h1 = document.createElement('h1');
+        h1.innerText = 'List of Dishes';
+        selectContainer1.appendChild(h1);
+
+        const ul1 = document.createElement('ul');
+        selectContainer1.appendChild(ul1);
+
+        const li1 = document.createElement('li');
+        li1.innerText = 'Burger';
+        ul1.appendChild(li1);
+
+        const li2 = document.createElement('li');
+        li2.innerText = 'Kacchi';
+        ul1.appendChild(li2);
+
+        const li3 = document.createElement('li');
+        li3.innerText = 'Shwarma';
+        ul1.appendChild(li3);
+        
+
+        //Second Method
+        const selectContainer2 = document.getElementById('container2');
+        selectContainer2.innerHTML = `
+        <h1>List of Drinks</h1>
+        <ul>
+            <li>Lacchi</li>
+            <li>Sprite</li>
+            <li>Lemon Juice</li>
+        </ul>
+        `;
+    </script>
+</body>
+</html>

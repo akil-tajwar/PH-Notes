@@ -37,13 +37,10 @@
     </section>
 
     <script>
-        document.querySelector('#top').innerText = 'High Expectation';
-
-        const allMe = document.querySelectorAll('.me');
-        for(const onlyMe of allMe){
-            console.log(onlyMe.innerText);
-            onlyMe.innerText = 'yap!! This is me';
-        }
+        const selectUl = document.querySelector('ul');
+        const li = document.createElement('li');
+        li.innerText = 'newly added';
+        selectUl.appendChild(li);
     </script>
 </body>
 </html>
