@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="secret">This text needs to be deleted</h2>
+    <input id="inputBox" type="text">
+    <button id="deleteButton">Delete</button>
+
+    <script>
+        document.getElementById('deleteButton').addEventListener('click', function(){
+            document.getElementById('secret').style.visibility = 'hidden';
+        })
+    </script>
+</body>
+</html>

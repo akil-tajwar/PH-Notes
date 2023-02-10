@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="commentLocation">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore nisi natus, a nobis officia unde quos sint rerum
+            excepturi, ullam dicta veniam laborum veritatis dolor debitis nihil accusamus eius porro maxime dolorum tenetur!
+            Voluptate rem saepe odio soluta fugiat eaque odit consectetur in provident? Magnam laborum expedita sapiente
+            illo veritatis!</p>
+        <p>Ipsam dolorum minima cum odit deserunt autem, suscipit perspiciatis, laborum sunt rerum quibusdam aliquam. Et
+            esse laborum itaque fuga sunt. Sed recusandae modi, veniam odit soluta ratione voluptatum qui necessitatibus
+            sunt, ipsa explicabo asperiores? Cupiditate, iusto quisquam tempore ea officiis ipsam nam tenetur quod nostrum
+            nisi? At quod blanditiis esse.</p>
+        <p>Veritatis suscipit voluptatem animi ad pariatur. Dolor deserunt maiores quam saepe possimus optio nam enim
+            consequuntur earum eos libero sint nulla obcaecati ipsa natus corrupti ut, temporibus nihil aspernatur incidunt
+            quis? Accusantium autem soluta sed ipsum corporis numquam, totam ad minima neque nesciunt nulla dignissimos iure
+            exercitationem facere incidunt voluptatem.</p>
+    </div>
+    <textarea name="" id="textArea" cols="40" rows="10"></textarea><br>
+    <button id="commentButton">Comment</button>
+
+    <script>
+        document.getElementById('commentButton').addEventListener('click', function(){
+            const texts = document.getElementById('textArea').value;
+            const selectContainer = document.querySelector('#commentLocation');
+            const p = document.createElement('p');
+            p.innerText = texts;
+            selectContainer.appendChild(p);
+            document.getElementById('textArea') = ''; 
+        })
+    </script>
+</body>
+</html>
