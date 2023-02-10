@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Color Changer</h1>
+    <button id="purple">Purple</button>
+    <button id="yellow">Yellow</button>
+    <button id="lightblue">Light Blue</button>
+
+    <script>
+        document.querySelector('body').style.textAlign = 'center';
+        const btns = document.querySelectorAll('button');
+        for(const btn of btns){
+            btn.style.height = '30px';
+            btn.style.width = '80px';
+            btn.style.margin = '5px';
+        }
+
+        //purple button
+        const purpleButton = document.getElementById('purple');
+        purpleButton.addEventListener('click', makePurple);
+        function makePurple(){
+            document.querySelector('body').style.backgroundColor = 'purple';
+        }
+
+        //yellow button
+        const yellowButton = document.getElementById('yellow');
+        yellowButton.addEventListener('click', function makeYellow(){
+            document.querySelector('body').style.backgroundColor = 'yellow';
+        })
+
+        //lightblue button
+        const lightblueButton = document.getElementById('lightblue');
+        lightblueButton.addEventListener('click', function(){
+            document.querySelector('body').style.backgroundColor = 'lightBlue';
+        })
+    </script>
+</body>
+</html>
