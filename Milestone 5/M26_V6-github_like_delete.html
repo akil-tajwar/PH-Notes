@@ -9,11 +9,22 @@
 <body>
     <h2 id="secret">This text needs to be deleted</h2>
     <input id="inputBox" type="text">
-    <button id="deleteButton">Delete</button>
+    <button id="deleteButton" disabled>Delete</button>
 
     <script>
+        document.getElementById('inputBox').addEventListener('keyup', function(){
+            let deleteConfirm = document.getElementById('inputBox').value;
+            let disableEffect = document.getElementById('deleteButton');
+            if(deleteConfirm === 'delete'){
+                disableEffect.removeAttribute('disabled');
+            }
+            else{
+                disableEffect.setAttribute('disabled', true);
+            }
+        })
         document.getElementById('deleteButton').addEventListener('click', function(){
             document.getElementById('secret').style.visibility = 'hidden';
+            alert('Text is deleted sussessfully');
         })
     </script>
 </body>
