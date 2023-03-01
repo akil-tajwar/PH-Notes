@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img id="pic">
+        <h1 id="name"></h1>
+        <h2 id="gender"></h2>
+    </div>
+
+    <script>
+        function loadData() {
+            fetch('https://randomuser.me/api/')
+            .then(res => res.json())
+            .then(data => displayData(data))
+        }
+        function displayData(data){
+            console.log(data);
+            document.getElementById('pic').src = data.results[0].picture.large;
+            document.getElementById('name').innerHTML = `Name : ${data.results[0].name.title + " " + data.results[0].name.first + " " + data.results[0].name.last}`;
+            document.getElementById('gender').innerHTML = `Gender : ${data.results[0].gender}`;
+        }
+        loadData();
+    </script>
+</body>
+</html>

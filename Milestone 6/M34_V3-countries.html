@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="" alt="" id="flag">
+    </div>
+
+    <script>
+        function loadData(){
+            fetch('https://restcountries.com/v2/all')
+            .then(res => res.json())
+            .then(allData => displayData(allData))
+        }
+        function displayData(allData){
+            for(const data of allData){
+
+            }
+        }
+        loadData();
+    </script>
+</body>
+</html>
