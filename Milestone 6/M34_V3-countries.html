@@ -6,21 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    img{
+        margin-top: 30px;
+        width: 30%;
+        border: 1px black solid;
+    }
+    #all-country{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+    }
+    .country{
+        border: 3px black solid;
+        padding: 10px;
+    }
+    button{
+        padding: 5px 10px;
+        background-color: rgb(191, 255, 191);
+        cursor: pointer;
+    }
+</style>
 <body>
-    <div>
-        <img src="" alt="" id="flag">
-    </div>
+    <div id="single-country"></div>
+    <div id="all-country"></div>
 
     <script>
-        function loadData(){
+        function loadData() {
             fetch('https://restcountries.com/v2/all')
-            .then(res => res.json())
-            .then(allData => displayData(allData))
+                .then(res => res.json())
+                .then(allData => displayData(allData))
         }
-        function displayData(allData){
-            for(const data of allData){
-
+        const displayData = allData =>{
+            for (const data of allData) {
+                console.log(data);
+                const countryInfo = document.createElement('div');
+                countryInfo.classList.add('country');
+                countryInfo.innerHTML = `
+                <img src="${data.flags.svg}">
+                <h1>Name : ${data.name}</h1>
+                <button onclick="executeButton('${data.cioc}')">Details</button>
+                `;
+                document.getElementById('all-country').appendChild(countryInfo);
             }
+        }
+        const executeButton = code =>{
+            // console.log(code, 'is rising');
+            const url = `https://restcountries.com/v2/alpha/${code}`;
+            console.log(url);
+            fetch(url)
+            .then(res2 => res2.json())
+            .then(data2 => singleCountry(data2))
+        }
+        const singleCountry = country =>{
+            console.log(country);
+            document.getElementById('single-country').innerHTML = `
+                <h1>Name : ${country.name}</h1>
+            `
         }
         loadData();
     </script>
