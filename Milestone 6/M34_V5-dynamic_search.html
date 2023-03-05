@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <!-- search -->
+    <div class="mb-10 text-center">
+        <input id="searchText" type="text" class="bg-gray-100 p-2 w-33 ml-9">
+        <button onclick="searchFood()" class="bg-blue-300 pt-2 pb-2 pr-3 pl-3 mt-4 rounded">Search</button>
+    </div>
+
+    <!-- cards -->
+    <div id="foodContainer" class="grid grid-cols-4 gap-5"></div>
+
+    <!-- modal -->
+    <div class="modal" id="mealDetails">
+        <div class="modal-box">
+            <h3 id="modal-title" class="font-bold text-lg">Congratulations random Internet user!</h3>
+            <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!
+            </p>
+            <div class="modal-action">
+                <a href="#" class="btn">Yay!</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const loadFood = (search) => {
+            const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
+            fetch(url)
+                .then(res => res.json())
+                .then(food => displayFood(food.meals))
+
+        }
+        const displayFood = (food) => {
+            const foodContainer = document.getElementById('foodContainer');
+            foodContainer.innerHTML = '';
+            food.forEach(meal => {
+                console.log(meal);
+                const foodDiv = document.createElement('div');
+                foodDiv.innerHTML = `
+                <div class="card w-96 bg-base-100 border-gray-300 border-2 mx-auto">
+                    <figure class="pb-4"><img class="border-gray-300" src="${meal.strMealThumb}"></figure>
+                    <div class="card-body p-7">
+                        <h2 class="card-title text-3xl pb-4">${meal.strMeal}</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                            <button onclick="loadMealApi2(${meal.idMeal})" class="btn btn-primary bg-blue-300 pt-2 pb-2 pr-3 pl-3 mt-4 rounded"><a href="#mealDetails">Details</button>
+                        </div>
+                    </div>
+                </div>
+            `
+                foodContainer.appendChild(foodDiv);
+            });
+        }
+        const searchFood = () => {
+            searchText = document.getElementById('searchText').value;
+            console.log(searchText);
+            loadFood(searchText);
+        }
+        loadFood('rice');
+
+        //not recommended
+        const loadMealApi = (idMeal) =>{
+            console.log(idMeal);
+            const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
+            fetch(url)
+            .then(res => res.json())
+            .then(data => loadDetails(data.meals[0]))
+        }
+        
+        //recommended
+        const loadMealApi2 = async(idMeal) =>{
+            const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
+            try{
+                const res = await fetch(url);
+                const data = await res.json();
+                loadDetails(data.meals[0]);
+            }
+            catch(error){
+                console.log(error);
+            }
+        }
+        const loadDetails = (meal) =>{
+            document.getElementById('modal-title').innerText = meal.strMeal;
+        }
+    </script>
+</body>
+</html>
