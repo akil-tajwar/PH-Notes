@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            display: inline-block;
+            font-size: 40px;
+        }
+        .everything{
+            text-align: center;
+            margin: auto 0;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="everything">
+        <div class="beside">
+            <h1 id="minute">0</h1>
+            <h1>:</h1>
+            <h1 id="second">0</h1>
+        </div>
+        <button id="start">start</button>
+        <button>stop</button>
+        <button>reset</button>
+    </section>
+
+    <script>
+        /*setinterval dealys all upcoming output (synchronous).
+        but timeout will not wait for delayed output (asynchronous).
+        the delayed output will be printed in the end*/
+
+        document.getElementById('start').addEventListener('click', () => {
+            let count = 0;
+            const intervalId = setInterval(() => {
+                document.getElementById('second').innerText = ++count;
+                /*i++ means first use the value, then increase it. 
+                and ++i means first increase the value, then use it.*/
+                if (count === 10) {
+                    //it will stop the timer when count value reaches to 10
+                    clearInterval(intervalId);
+                }
+            }, 1000)
+        })
+    </script>
+</body>
+</html>
