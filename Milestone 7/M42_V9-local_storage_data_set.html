@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <input id="item-name" type="text" placeholder="item name">
+        <input id="quantity-product" type="text" placeholder="quantity">
+        <button onclick="addToCart()">Add to cart</button>
+    </section>
+    <section>
+        <div id="items-container"></div>
+    </section>
+    
+    <script>
+        const addToCart =()=>{
+            const product = document.getElementById('item-name').value;
+            const quantity = document.getElementById('quantity-product').value;
+            
+            console.log(product, quantity);
+            inputDeclaration(product, quantity);
+            saveToLocalStorage = (product, quantity)
+        }
+
+        const inputDeclaration=(product, quantity)=>{
+            const itemContainer = document.getElementById('items-container');
+            const items = document.createElement('p');
+            items.innerText = `${product} : ${quantity}`;
+            itemContainer.appendChild(items);
+        }
+
+        const storingShoppingCart = () =>{
+            let cart = {};
+            const storeCart = localStorage.getItem('cart');
+            if(storeCart){
+                JSON.parse(storeCart);
+            }
+            return storeCart;
+        }
+
+        const saveToLocalStorage = (product, quantity) =>{
+            const cart = storingShoppingCart();
+            cart[product] = quantity;
+            const cartStringified = JSON.stringify(cart);
+            localStorage.setItem('cart', cartStringified);
+        }
+    </script>
+</body>
+</html>
