@@ -22,11 +22,11 @@
             const quantity = document.getElementById('quantity-product').value;
             
             console.log(product, quantity);
-            inputDeclaration(product, quantity);
-            saveToLocalStorage = (product, quantity)
+            displayProduct(product, quantity);
+            saveToLocalStorage(product, quantity);
         }
 
-        const inputDeclaration=(product, quantity)=>{
+        const displayProduct=(product, quantity)=>{
             const itemContainer = document.getElementById('items-container');
             const items = document.createElement('p');
             items.innerText = `${product} : ${quantity}`;
@@ -37,9 +37,9 @@
             let cart = {};
             const storeCart = localStorage.getItem('cart');
             if(storeCart){
-                JSON.parse(storeCart);
+                cart = JSON.parse(storeCart);
             }
-            return storeCart;
+            return cart;
         }
 
         const saveToLocalStorage = (product, quantity) =>{
@@ -48,6 +48,17 @@
             const cartStringified = JSON.stringify(cart);
             localStorage.setItem('cart', cartStringified);
         }
+
+        const displayFromLocalStorage = () => {
+            const savedCart = storingShoppingCart();
+            console.log(savedCart);
+            for(const product in savedCart){
+                const quantity = savedCart[product];
+                console.log(product, quantity);
+                displayProduct(product, quantity);
+            }
+        }
+        displayFromLocalStorage();
     </script>
 </body>
 </html>
