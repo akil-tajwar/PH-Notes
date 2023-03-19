@@ -44,7 +44,10 @@
 
         const saveToLocalStorage = (product, quantity) =>{
             const cart = storingShoppingCart();
+            console.log(cart)
             cart[product] = quantity;
+            console.log(`cart[${product}] = ${quantity}`);
+            console.log(cart);
             const cartStringified = JSON.stringify(cart);
             localStorage.setItem('cart', cartStringified);
         }
