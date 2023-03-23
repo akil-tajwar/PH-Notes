@@ -1,0 +1,8 @@
+.heading{
+    text-align: center;
+}
+.countries{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
