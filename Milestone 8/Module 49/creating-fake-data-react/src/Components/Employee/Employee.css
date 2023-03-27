@@ -1,0 +1,12 @@
+.employee{
+    border: 2px solid maroon;
+    width: fit-content;
+    margin: 0 auto;
+}
+.employee-img img{
+    width: 100%;
+}
+.employee-info{
+    padding: 10px;
+    text-align: left;
+}

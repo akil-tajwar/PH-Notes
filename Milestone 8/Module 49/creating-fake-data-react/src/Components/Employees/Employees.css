@@ -1,0 +1,11 @@
+.employees-main{
+    text-align: center;
+}
+.employees{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.employees button{
+    margin-bottom: 20px;
+}
