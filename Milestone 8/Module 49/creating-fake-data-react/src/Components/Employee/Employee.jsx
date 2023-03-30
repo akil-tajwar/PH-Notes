@@ -4,7 +4,7 @@ import './Employee.css'
 
 const Employee = (props) => {
     console.log(props)
-    const {picture, name, isActive, gender, age, id, email, about} = props.employee
+    const {picture, name, gender, age, id, email, about} = props.employee
 
     const assignPerson = (id) => {
         console.log(name,'is assigned for this task. and id is ', id);
@@ -22,7 +22,6 @@ const Employee = (props) => {
             </div>
                 <h2>{name}</h2>
             <div className='employee-info'>
-                <p>Status: {isActive}</p>
                 <p>Gender: {gender}</p>
                 <p>Age: {age}</p>
                 <p>Email: {email}</p>
