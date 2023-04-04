@@ -29,12 +29,14 @@ const Graph = () => {
             })
     }, [])
     return (
-        <div>
-            <BarChart width={1000} height={500} data={phones}>
-                <Bar dataKey="price" fill="#8884d8" />
-                <XAxis dataKey="name"></XAxis>
-                <YAxis></YAxis>
-            </BarChart>
+        <div style={{ width: "50%", height: "400px" }}>
+            <ResponsiveContainer width="100%" height="100%">
+                <BarChart width={1000} height={500} data={phones}>
+                    <Bar dataKey="price" fill="#8884d8" />
+                    <XAxis dataKey="name"></XAxis>
+                    <YAxis></YAxis>
+                </BarChart>
+            </ResponsiveContainer>
         </div>
     );
 };
