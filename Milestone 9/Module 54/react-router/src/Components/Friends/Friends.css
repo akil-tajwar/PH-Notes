@@ -1,0 +1,8 @@
+.friends{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    width: fit-content;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 20px;
+}

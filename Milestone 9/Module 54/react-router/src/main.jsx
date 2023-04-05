@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
 import './index.css'
 import {
   createBrowserRouter,
@@ -8,7 +7,10 @@ import {
 } from "react-router-dom";
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
-import Blogs from './Components/Blogs/Blogs';
+import Friends from './Components/Friends/Friends';
+import FriendDetail from './Components/FrieendDetail/FriendDetail';
+import Posts from './Components/Posts/Posts';
+import PostDetail from './Components/PostDetail/PostDetail';
 
 const router = createBrowserRouter([
   {
@@ -20,9 +22,28 @@ const router = createBrowserRouter([
         element: <About></About>
       },
       {
-        path: "blogs",
-        element: <Blogs></Blogs>,
+        path: "friends",
+        element: <Friends></Friends>,
         loader: ()=> fetch('https://jsonplaceholder.typicode.com/users')
+      },
+      {
+        path: "friend/:friendId",
+        element: <FriendDetail></FriendDetail>,
+        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.friendId}`)
+      },
+      {
+        path: "posts",
+        element: <Posts></Posts>,
+        loader: () => fetch('https://jsonplaceholder.typicode.com/posts')
+      },
+      {
+        path: "post/:postId",
+        element: <PostDetail></PostDetail>,
+        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`)
+      },
+      {
+        path: "*",
+        element: <div>Sorry!! The page that you are searching for has gone for a walk.</div>
       }
     ]
   },

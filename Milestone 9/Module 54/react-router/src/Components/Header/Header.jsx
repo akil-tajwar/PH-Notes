@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ActiveNavMenu from '../ActiveNavMenu/ActiveNavMenu';
+import './Header.css'
 
 const Header = () => {
     return (
@@ -7,14 +9,15 @@ const Header = () => {
         /*<div>
             <a href="/">Home</a>
             <a href="/About">About</a>
-            <a href="/Blogs">Blogs</a>
+            <a href="/Blogs">Friends</a>
         </div>*/
 
         //this method won't reload the page
-        <nav>
-            <Link to='/'>Home</Link>
-            <Link to='/About'>About</Link>
-            <Link to='/Blogs'>Blogs</Link>
+        <nav className='nav-menu'>
+            <ActiveNavMenu to='/'>Home</ActiveNavMenu>
+            <ActiveNavMenu to='/About'>About</ActiveNavMenu>
+            <ActiveNavMenu to='/Friends'>Friends</ActiveNavMenu>
+            <ActiveNavMenu to='/Posts'>Posts</ActiveNavMenu>
         </nav>
     );
 };
