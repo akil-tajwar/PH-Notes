@@ -25,6 +25,8 @@ const Header = () => {
                 <div className="flex-none">
                     <div className='flex gap-5'>
                         <Link to='/'>Home</Link>
+                        <Link to='/orders'>Orders</Link>
+                        <Link to='/profile'>Profile</Link>
                         {
                             user ? <span onClick={handleLogOut} className='cursor-pointer'>Signout</span> : <Link to='/login'>Login</Link>
                         }

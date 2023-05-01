@@ -1,0 +1,39 @@
+.main-container{
+    width: fit-content;
+    margin: 130px auto;
+    padding: 20px;
+    border: 2px solid #95A0A7;
+}
+h2{
+    text-align: center;
+}
+.form-control{
+    padding-bottom: 10px;
+}
+.form-control input{
+    width: 300px;
+    height: 33px;
+}
+button{
+    background-color: #ff99004d;
+    width: 100%;
+    margin-top: 10px;
+}
+.signup{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+a{
+    color: #FF9900;
+}
+p{
+    text-align: center;
+}
+.google{
+    background-color: white;
+    border: 1px solid #95A0A7;
+}
+.hide-show{
+    cursor: pointer;
+}
