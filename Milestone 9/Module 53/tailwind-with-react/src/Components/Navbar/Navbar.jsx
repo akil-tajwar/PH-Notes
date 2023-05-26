@@ -9,12 +9,12 @@ const Navbar = () => {
                 <div className='text-3xl'>
                     <h1>LOGO</h1>
                 </div>
-                <div>
+                <div className='overflow-hidden'>
                     <div className='cursor-pointer lg:hidden' onClick={() => setOpen(!open)}>
                         <Bars3Icon className="h-8 w-8 text-black" />
                     </div>
                     <div className={`absolute lg:static p-6 lg:w-fit w-1/2 h-full text-right bg-blue-100 flex flex-col lg:flex-row lg:gap-5 lg:justify-center lg:items-center duration-500 ${open ? 'right-0 top-0' : '-right-96 top-0'}`}>
-                        <div className='flex justify-between  lg:hidden'>
+                        <div className='flex justify-between lg:hidden'>
                             <div>
                                 <h2 className='text-2xl'>Menu</h2>
                             </div>

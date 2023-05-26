@@ -17,7 +17,7 @@ const UpdateCoffee = () => {
         const photo = form.photo.value;
 
         const updatedCoffee = { _id, name, quantity, supplier, taste, category, details, photo };
-        console.log(updatedCoffee);
+        // console.log(updatedCoffee);
 
         //send data to the server
         fetch(`http://localhost:5000/coffee/${_id}`, {
