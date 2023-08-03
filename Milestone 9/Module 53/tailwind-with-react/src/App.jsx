@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <Navbar></Navbar>
-      <h1 className='text-6xl'>Hello Tailwind</h1>
-      <Graph></Graph>
+      {/* <h1 className='text-6xl'>Hello Tailwind</h1> */}
+      {/* <Graph></Graph> */}
     </div>
   )
 }

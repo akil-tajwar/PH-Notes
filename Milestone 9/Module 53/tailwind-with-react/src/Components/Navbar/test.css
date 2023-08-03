@@ -1,0 +1,10 @@
+.btn--doar {
+  color: #fff;
+  padding-right: 0;
+  background-color: #c0392b;
+  padding: 5px 20px;
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 70%, 90% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 0 100%);
+  /* 100% 0, 100% 100%, 25% 100%, 0 50%, 25% 0 */
+
+}
