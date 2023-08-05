@@ -1,6 +1,7 @@
 const AboutUs = () => {
     return (
         <div className="w-3/4 mx-auto mt-32">
+            <h3 className="text-3xl font-semibold text-center text-[#FF3811] pb-10">About Us</h3>
             <div className="flex gap-32">
                 <div className="relative">
                     <div className="relative text-center w-full h-96">
