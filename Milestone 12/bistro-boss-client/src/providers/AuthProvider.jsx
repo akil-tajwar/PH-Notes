@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 import { getAuth } from "firebase/auth";
 
 export const AuthContext = createContext(null);
-const auth = getAuth(app);
+// const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
